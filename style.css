@@ -1,0 +1,9 @@
+#plus {
+	border-radius: 50%;
+	background: blue;
+	width: 20px;
+	height: 10px;
+	text-align: center;
+	padding-bottom: 10px;
+	cursor: pointer;
+}
