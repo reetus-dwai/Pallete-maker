@@ -20,7 +20,6 @@ function newColor(){
 
 function randomColor(){
 	let array = [];
-	let hex;
 	
 	for (i = 0; i < 6; i++){
 		if (Math.round((Math.random() * (15 - 0) + 0)) < 10){
@@ -43,6 +42,32 @@ function randomColor(){
 			}
 		}
 	}
-	hex = '#' + array[0] + array[1] + array[2] + array[3] + array[4] + array[5];
+        let numbers = '' + array[0] + array[1] + array[2] + array[3] + array[4] + array[5];
+	let hex = '#' + numbers;
 	return hex;
+}
+
+function showHex(){
+	let allHex = [];
+	for (let i = 0; i < (document.getElementsByTagName('input').length); i++){
+		allHex.push(document.getElementsByTagName('input')[i].value);
+
+	pallete(allHex[i]);
+  document.getElementById('final').innerHTML = allHex;
+	}
+}
+
+function pallete(hex){
+	const before = document.getElementById('that');
+	let div = document.createElement('div');
+	div.style.background = hex;
+	div.style.textAlign = 'center';
+	div.style.position = 'relative';
+	div.style.top = '20px';
+	div.style.display = 'inline';
+	div.style.padding = '7px';
+	div.style.margin = '1px'
+	div.innerHTML = hex;
+	
+	document.body.insertBefore(div, before)
 }
